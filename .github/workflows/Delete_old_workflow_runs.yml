@@ -1,17 +1,17 @@
 name: Delete old workflow runs
 on:
   schedule:
-    - cron: '0 1 */7 * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:
     inputs:
       days:
         description: '工作流要保留的运行天数'
         required: true
-        default: '7'
+        default: '3'
       minimum_runs:
         description: '工作流程要保留的最小运行数'
         required: true
-        default: '1'
+        default: '2'
       delete_workflow_pattern:
         description: '工作流的名称或文件名（如果未设置，则以所有工作流为目标）'
         required: false
